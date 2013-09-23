@@ -63,3 +63,12 @@ pre, pre header{
 	font-size: 80%;
 	line-height: 100%;
 }
+
+.active {
+	display: block;
+}
+
+article > section {
+
+	display: none;
+}
