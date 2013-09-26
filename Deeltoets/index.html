@@ -51,12 +51,15 @@
                 <section>
                     <table>
                         <thead>
-                        <th>Team</th>
-                        <th>W</th>
-                        <th>L</th>
-                        <th>Points won</th>
-                        <th>Points lost</th>
-                        <th>+/-</th>
+                         <tr>
+                            <th>Team</th>
+                            <th>W</th>
+                            <th>L</th>
+                            <th>Points won</th>
+                            <th>Points lost</th>
+                            <th>+</th>
+                            <th>-</th>
+                        </tr>
                         </thead>
                         <tbody data-bind="items">
                             <tr>
@@ -65,7 +68,8 @@
                                 <td data-bind="Lost"></td>
                                 <td data-bind="Sw"></td>
                                 <td data-bind="Sl"></td>
-                                <td data-bind="Pw" "Pl"></td>
+                                <td data-bind="Pw"></td>
+                                <td data-bind="Pl"></td>
                             </tr>
                         </tbody>
                     </table>
@@ -78,11 +82,13 @@
                 <section>
                     <table>
                         <thead>
+                        <tr>
                             <th>Score</th>
                             <th>Team 1</th>
                             <th>Team 1 Score</th>
                             <th>Team 2 Score</th>
                             <th>Team 2</th>
+                        </tr>
                         </thead>
                         <tbody data-bind="items">
                             <tr>
