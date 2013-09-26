@@ -25,11 +25,13 @@
                 <section>
                     <table>
                         <thead>
-                            <th>Date</th>
-                            <th>Team 1</th>
-                            <th>Team 1 Score</th>
-                            <th>Team 2 Score</th>
-                            <th>Team 2</th>
+                                <tr>
+                                    <th>Datum</th>
+                                    <th>Team 1</th>
+                                    <th>Team 2</th>
+                                    <th>Team 1 score</th>
+                                    <th>Team 2 score</th>
+                                </tr>
                         </thead>
                         <tbody data-bind="items">
                             <tr>
@@ -42,7 +44,7 @@
                         </tbody>
                     </table>
                 </section>
-             </section>
+            </section>
             <section data-route="ranking">
                 <h1 data-bind="title"></h1>
                 <p data-bind="description"></p>
@@ -68,7 +70,7 @@
                         </tbody>
                     </table>
                 </section>
-             </section>
+            </section>
 
             <section data-route="game">
                 <h1 data-bind="title"></h1>
@@ -94,6 +96,7 @@
                     </table>
                 </section>
              </section>
+        </article>
 
         <!-- Libs -->
         <script src="js/lib/routie.min.js"></script>
