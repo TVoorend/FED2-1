@@ -1,7 +1,9 @@
+//hier wordt de namespace aangemaakt
 var SCOREAPP = SCOREAPP || {};
 
 (function () {
-    // Data objecten
+    // Data objecten worden hier aan de namespace toegevoegd
+
     SCOREAPP.schedule = {
         title:'schedule 1',
         description:'schedule is de eerste pagina',
@@ -61,7 +63,7 @@ var SCOREAPP = SCOREAPP || {};
     ]
      };
 
-    // Controller Init
+    // Controller Init wordt uitgevoerd door de kickstart
     SCOREAPP.controller = {
         init: function () {
             // Initialize router
