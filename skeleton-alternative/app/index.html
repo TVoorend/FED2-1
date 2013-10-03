@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>.active { display: block } section { display: none }</style>
+</head>
+<body>
+	<ul>
+		<li><a href="#/schedule">schedule</a></li>
+		<li><a href="#/game">game</a></li>
+		<li><a href="#/ranking">ranking</a></li>
+	</ul>
+	<section data-route="schedule" class='active'>
+		<h1 class="bindto-title_schedule"></h1>
+		<p class="bindto-text_schedule"></p>
+		<table>
+			<thead>
+				<tr>
+					<td>Datum</td>
+					<td>team 1</td>
+					<td>team 2</td>
+					<td>team1score</td>
+					<td>team2score</td>
+				</tr>
+			</thead>
+				<tbody class="bindto-items_schedule">
+					<tr data-bind_each>
+						<td data-bind_key="date"></td>
+						<td data-bind_key="team1"></td>
+						<td data-bind_key="team2"></td>
+						<td data-bind_key="team1Score"></td>
+						<td data-bind_key="team2Score"></td>
+					</tr>
+				</tbody>
+			</table>
+	</section>
+
+	<section data-route="game">
+		<h1 class="bindto-title"></h1>
+		<p class="bindto-text"></p>
+			<table>
+				<thead>
+					<tr>
+						<td>Score</td>
+						<td>team 1</td>
+						<td>score team 1</td>
+						<td>score team 2</td>
+						<td>team 2</td>
+					</tr>
+				</thead>
+					<tbody class="bindto-items_game">
+						<tr data-bind_each>
+							<td data-bind_key="score"></td>
+							<td data-bind_key="team1"></td>
+							<td data-bind_key="team1Score"></td>
+							<td data-bind_key="team2Score"></td>
+							<td data-bind_key="team2"></td>
+						</tr>
+					</tbody>
+			</table>
+	</section>
+
+	<section data-route="ranking">
+		<h1 class="bindto-title"></h1>
+		<p class="bindto-text"></p>
+
+		<table>
+				<thead>
+					<tr>
+						<td>Team</td>
+						<td>Win</td>
+						<td>Lost</td>
+						<td>Sw</td>
+						<td>Sl</td>
+						<td>Pw</td>
+						<td>Pl</td>
+					</tr>
+				</thead>
+					<tbody class="bindto-items_ranking">
+						<tr data-bind_each>
+							<td data-bind_key="team"></td>
+							<td data-bind_key="Win"></td>
+							<td data-bind_key="Lost"></td>
+							<td data-bind_key="Sw"></td>
+							<td data-bind_key="Sl"></td>
+							<td data-bind_key="Pw"></td>
+							<td data-bind_key="Pl"></td>
+						</tr>
+					</tbody>
+			</table>
+	</section>
+	<script src="lib/director.min.js"></script>
+	<script src="lib/domready.min.js"></script>
+	<script src="lib/iugo.min.js"></script>
+	<script src="lib/qwery.min.js"></script>
+	<script src="app.js"></script>
+</body>
+</html>
