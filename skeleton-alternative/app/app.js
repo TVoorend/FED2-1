@@ -1,6 +1,12 @@
-//hier wordt de namespace aangemaakt dit is handig als men bijvoorbeeld gebruikt maakt van verschillende bestanden.
-
+//hier wordt de namespace aangemaakt dit is handig 
+//om conflicten te voorkomen met andere code.
+//Mocht er al een APP namespace bestaan, 
+//dan wordt die gewoon overgenomen. 
+//Dit kan voorkomen omdat andere Javascript files ook die namespace gebruiken. 
+//Indien die niet bestaat, wordt een leeg object toegekend.
 var APP = APP || {};
+//een anonieme self-invoking functie runt automatisch / 
+//onmiddellijk wanneer je deze maakt en geen naam geeft, vandaar anoniem genoemd 
 
 (function () {
 	APP.app = {
@@ -9,16 +15,18 @@ var APP = APP || {};
 
 			var router = APP.router.routeObj;
 			router.configure({
-				on: APP.router.change()
+				on: APP.router.change() //een configuratie van de microlibrary iugo om de change te kunne uitvoeren
 			})
 			router.init();
 		}
 	}
 
 	APP.schedule = function () {
+		//iugo zal het model binden aan de DOM en het 
+		//gesynchroniseerd houden als uw programma wijzigingen doorvoert in de gegevens. 
 		var model = new Iugo({
 			"title_schedule" : "Schedule pagina",
-			"text_schedule" : "schedule pagina",
+			"text_schedule" : "Schedule pagina",
 			"items_schedule" : [
 			{ date: "Monday, 9:00am", team1: "Chasing", team1Score: "13", team2: "Amsterdam Money Gang", team2Score: "9"},
    { date: "Monday, 9:00am", team1: "Boomsquad", team1Score: "15", team2: "Beast Amsterdam", team2Score: "11"},
@@ -41,7 +49,7 @@ var APP = APP || {};
 			"text" : "Game pagina",
 			"items_game" : [
 
-			{ score: "1", team1: "Boomsquad", team1Score: "1", team2: "Burning Snow", team2Score: "0"},
+	{ score: "1", team1: "Boomsquad", team1Score: "1", team2: "Burning Snow", team2Score: "0"},
     { score: "2", team1: "Boomsquad", team1Score: "2", team2: "Burning Snow", team2Score: "0"},
     { score: "3", team1: "Boomsquad", team1Score: "2", team2: "Burning Snow", team2Score: "1"},
     { score: "4", team1: "Boomsquad", team1Score: "2", team2: "Burning Snow", team2Score: "2"},
@@ -95,6 +103,7 @@ var APP = APP || {};
 			'/ranking' : APP.ranking,
 			'/*' : APP.schedule
 		}),
+		//hier worden bij alle sections eerst de class active verwijdert en daarna aan de geselecteerde weer toegevoegd
 		change: function () {
 			var route = window.location.hash.slice(2),
 				sections = qwery('section'),
@@ -111,7 +120,7 @@ var APP = APP || {};
 				}
 		}
 	}
-
+// de functie APP.app.init wordt uitgevoerd op het moment de dom-ready is. 
 	domready(function () {
 		APP.app.init();
 	});
