@@ -10,6 +10,8 @@ var APP = APP || {};
 
 (function () {
 	APP.app = {
+		//Wordt als eerste uitgevoerd.
+		//Daarmee geef je prioriteiten aan een functie
 		init: function () {
 			APP.schedule();			
 
