@@ -96,6 +96,8 @@ var APP = APP || {};
 		APP.router.change();
 	}
 
+	//hier wordt de router aangeroepen in de director library
+
 	APP.router = {
 		routeObj : Router({
 			'/schedule' : APP.schedule,
