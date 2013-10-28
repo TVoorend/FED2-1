@@ -9,7 +9,7 @@ var SCOREAPP = SCOREAPP || {};
 (function () {
 	// Local scope == function scope == lexical scope
 	// Zorgt ervoor dat je script in EMASCRIPT 5 draait	
-	"use strict";
+	
 
 	// SETTINGS
 	SCOREAPP.settings = {
