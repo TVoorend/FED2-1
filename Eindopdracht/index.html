@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<title>Tournament: Amsterdam Ultimate Autumn</title>
+	<link href="static/css/style.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+	<header>
+		<h1>Tournament: Amsterdam Ultimate Autumn</h1>
+		<nav>
+			<ul>
+				<li><a href="#/schedule">Schedule</a></li>
+				<li><a href="#/ranking">Ranking</a></li>
+		    </ul>
+		</nav>
+	</header>
+	
+	<article id="content" class="col">
+
+		<section data-route="schedule">
+			<section data-bind="objects">
+				<h1 data-bind="pool">Pool <span data-bind="name"></span></h1>
+					<table>
+						<thead>
+							<tr>
+								<th>Team</th>
+								<th>Score</th>
+								<th>Team</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td data-bind="team_1"><span data-bind="name"></span></td>
+								<td><span data-bind="team_1_score"></span> - <span data-bind="team_2_score"></span></td>
+								<td data-bind="team_2"><span data-bind="name"></span></td>
+								<td><a data-bind="thisID">Update score</a></td>
+							</tr>
+						</tbody>
+					</table>
+			</section>	
+		</section>
+
+		<section data-route="game">
+			<section>
+				<table>
+					<thead>
+						<tr>
+							<th>Team</th>
+							<th></th>
+							<th>Score</th>
+							<th></th>
+							<th>Team</th>
+						</tr>
+					</thead>
+					<tbody>
+
+						<tr>
+							<td data-bind="team_1"><span data-bind="name"></span></td>
+							<td>
+								<select id="team1Score">
+									<option value="0">0</option>
+									<option value="1">1</option>
+									<option value="2">2</option>
+									<option value="3">3</option>
+									<option value="4">4</option>
+									<option value="5">5</option>
+									<option value="6">6</option>
+									<option value="7">7</option>
+									<option value="8">8</option>
+									<option value="9">9</option>
+									<option value="10">10</option>
+									<option value="11">11</option>
+									<option value="12">12</option>
+									<option value="13">13</option>
+									<option value="14">14</option>
+									<option value="15">15</option>
+								</select>
+							</td>
+							<td><span data-bind="team_1_score"></span> - <span data-bind="team_2_score"></span></td>
+							<td>
+								<select id="team2Score">
+									<option value="0">0</option>
+									<option value="1">1</option>
+									<option value="2">2</option>
+									<option value="3">3</option>
+									<option value="4">4</option>
+									<option value="5">5</option>
+									<option value="6">6</option>
+									<option value="7">7</option>
+									<option value="8">8</option>
+									<option value="9">9</option>
+									<option value="10">10</option>
+									<option value="11">11</option>
+									<option value="12">12</option>
+									<option value="13">13</option>
+									<option value="14">14</option>
+									<option value="15">15</option>
+								</select>
+							</td>
+							<td data-bind="team_2"><span data-bind="name"></span></td>
+							<td><a id"updateScore" data-bind="postID">Update</a> </td>
+						</tr>
+					</tbody>
+				</table>
+			</section>	
+		</section>
+
+		<section data-route="post">
+			<table>
+			<tr><td><h1 data-bind="name"> Post is succes </h1></td></tr>
+			<tr><td><a data-bind="backToGameID">Ga terug naar de schedule pagina</a></td></tr>
+			</table>
+		</section>
+
+		<section data-route="ranking">
+			<section data-bind="objects">
+				<h1><a class="poolid" data-bind="poolidurl">Pool <span data-bind="name"></span></a></h1>
+				<table>
+					<thead>
+						<tr>
+							<th>Team</th>
+							<th>W</th>
+							<th>L</th>
+							<th>Points allowed</th>
+							<th>Points scored</th>
+							<th>+/-</th>
+						</tr>
+					</thead>
+					<tbody data-bind="standings">
+						<tr>
+							<td data-bind="team"><span data-bind="name"></span></td>
+							<td data-bind="wins"></td>
+							<td data-bind="losses"></td>
+							<td data-bind="points_allowed"></td>
+							<td data-bind="points_scored"></td>
+							<td data-bind="plus_minus"></td>
+						</tr>
+					</tbody>
+				</table>
+			</section>
+		</section>
+
+	</article>
+
+	<!-- Libs -->
+	<script src="static/js/lib/routie.min.js"></script>
+	<script src="static/js/lib/ready.min.js" type="text/javascript"></script>
+	<script src="static/js/lib/qwery.min.js" type="text/javascript"></script>
+	<script src="static/js/lib/transparancy.min.js" type="text/javascript"></script>
+	<script src="static/js/lib/promise.min.js" type="text/javascript"></script>
+
+	<!-- Application -->
+	<script src="static/js/app.js"></script>
+	
+</body>
+</html>
